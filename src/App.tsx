@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { TezosToolkit } from "@taquito/taquito";
 import "./App.css";
+import qrcode from "qrcode-generator";
+import { TezosToolkit } from "@taquito/taquito";
 import ConnectButton from "./components/ConnectWallet";
 import DisconnectButton from "./components/DisconnectWallet";
-import qrcode from "qrcode-generator";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 
