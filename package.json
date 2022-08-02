@@ -24,9 +24,9 @@
   },
   "scripts": {
     "build": "react-scripts build",
-    "eject": "react-scripts eject",
-    "start": "HTTPS=true react-scripts start",
     "test": "react-scripts test",
+    "start": "HTTPS=true react-scripts start",
+    "eject": "react-scripts eject",
     "update-taquito": "ncu -u --target newest --filter '/@taquito.*$/' && npm i"
   },
   "eslintConfig": {
