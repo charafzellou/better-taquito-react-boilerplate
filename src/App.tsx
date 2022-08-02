@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import "./App.css";
 import qrcode from "qrcode-generator";
 import { TezosToolkit } from "@taquito/taquito";
@@ -17,7 +17,7 @@ enum BeaconConnection {
 
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://hangzhounet.api.tez.ie")
+    new TezosToolkit("https://rpc.tzkt.io/ghostnet")
   );
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
@@ -29,9 +29,7 @@ const App = () => {
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
 
-  // Granadanet Increment/Decrement contract
-  // const contractAddress: string = "KT1K3XVNzsmur7VRgY8CAHPUENaErzzEpe4e";
-  // Hangzhounet Increment/Decrement contract
+  // Ghostnet Increment/Decrement contract
   const contractAddress: string = "KT1WiPWNcBMcXJButkkvroRGkzs45n3iZ13c";
 
   const generateQrCode = (): { __html: string } => {
@@ -139,7 +137,7 @@ const App = () => {
             <p>
               <i className="far fa-file-code"></i>&nbsp;
               <a
-                href={`https://better-call.dev/hangzhounet/${contractAddress}/operations`}
+                href={`https://better-call.dev/ghostnet/${contractAddress}/operations`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
