@@ -172,10 +172,11 @@ const App = () => {
       <div className="main-box">
         <div className="title">
           <h1>Taquito Boilerplate</h1>
-          <a href="https://app.netlify.com/start/deploy?repository=https://github.com/ecadlabs/taquito-boilerplate">
+          <a href="https://vercel.com/new">
             <img
-              src="https://www.netlify.com/img/deploy/button.svg"
-              alt="netlify-button"
+            width={50}
+              src="https://camo.githubusercontent.com/add2c9721e333f0043ac938f3dadbc26a282776e01b95b308fcaba5afaf74ae3/68747470733a2f2f6173736574732e76657263656c2e636f6d2f696d6167652f75706c6f61642f76313538383830353835382f7265706f7369746f726965732f76657263656c2f6c6f676f2e706e67"
+              alt="vercel-button"
             />
           </a>
         </div>
@@ -189,7 +190,7 @@ const App = () => {
               <br />
               If you have not done so already, go to the{" "}
               <a
-                href="https://github.com/ecadlabs/taquito-boilerplate"
+                href="https://github.com/charafzellou-sc/better-taquito-react-boilerplate"
                 target="_blank"
                 rel="noopener noreferrer"
               >
