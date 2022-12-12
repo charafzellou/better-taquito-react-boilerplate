@@ -6,6 +6,8 @@ body,
   margin: 0px;
   padding: 0px;
   font-size: 1rem;
+  color: white;
+  background-color: rgb(20, 20, 20);
 }
 
 #root {
@@ -24,14 +26,13 @@ body,
 }
 
 h1 {
-  color: #35636e;
   text-align: left;
 }
 
 header {
   font-size: 1.5rem;
   padding: 20px;
-  background-color: #35636e;
+  background-color: rgb(40, 80, 100);
   color: white;
 }
 
@@ -65,7 +66,6 @@ header {
 .button {
   margin-top: 0px;
   margin-bottom: 5px;
-  color: #35636e;
   font-size: 1rem;
   padding: 15px;
   background-color: white;
@@ -108,7 +108,7 @@ header {
 
 a {
   text-decoration: none;
-  color: royalblue;
+  color: white;
 }
 a:hover {
   font-style: italic;
