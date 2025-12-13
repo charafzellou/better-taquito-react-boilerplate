@@ -6,7 +6,7 @@
     "@airgap/beacon-sdk": "4.6.4",
     "@craco/craco": "7.1.0",
     "@ledgerhq/hw-transport-webusb": "6.29.13",
-    "@taquito/beacon-wallet": "21.0.5",
+    "@taquito/beacon-wallet": "23.1.0",
     "@taquito/ledger-signer": "21.0.5",
     "@taquito/taquito": "21.0.5",
     "@testing-library/jest-dom": "5.17.0",
