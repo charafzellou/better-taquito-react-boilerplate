@@ -12,12 +12,13 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [18.x, 20.x]
 
-    # env: 
-    #   CI: false
+    env: 
+      CI: false
 
     steps:
     - uses: actions/checkout@v3
@@ -26,5 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm i
-    - run: npm run build
+    - name: Installing dependencies
+      run: npm ci
+    - name: Building the source code
+      run: npm run build
