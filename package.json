@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@airgap/beacon-sdk": "4.6.4",
+    "@airgap/beacon-sdk": "4.8.1",
     "@craco/craco": "7.1.0",
-    "@ledgerhq/hw-transport-webusb": "6.29.13",
+    "@ledgerhq/hw-transport-webusb": "6.30.0",
     "@taquito/beacon-wallet": "21.0.5",
     "@taquito/ledger-signer": "21.0.5",
     "@taquito/taquito": "21.0.5",
