@@ -61,7 +61,7 @@ function registerValidSW(swUrl, config) {
     return;
   }
   navigator.serviceWorker
-    .register(swUrl)
+    .register(swParsedUrl.href)
     .then(registration => {
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
@@ -110,7 +110,7 @@ function checkValidServiceWorker(swUrl, config) {
     return;
   }
   // Check if the service worker can be found. If it can't reload the page.
-  fetch(swUrl, {
+  fetch(swParsedUrl.toString(), {
     headers: { 'Service-Worker': 'script' },
   })
     .then(response => {
