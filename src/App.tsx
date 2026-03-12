@@ -7,14 +7,6 @@ import DisconnectButton from "./components/DisconnectWallet";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 
-enum BeaconConnection {
-  NONE = "",
-  LISTENING = "Listening to P2P channel",
-  CONNECTED = "Channel connected",
-  PERMISSION_REQUEST_SENT = "Permission request sent, waiting for response",
-  PERMISSION_REQUEST_SUCCESS = "Wallet is connected"
-}
-
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
     new TezosToolkit("https://rpc.tzkt.io/shadownet")

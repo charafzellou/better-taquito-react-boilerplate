@@ -4,8 +4,7 @@ import { BeaconWallet } from "@taquito/beacon-wallet";
 import {
   NetworkType,
   BeaconEvent,
-  defaultEventCallbacks,
-  Network
+  defaultEventCallbacks
 } from "@airgap/beacon-sdk";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 import { LedgerSigner } from "@taquito/ledger-signer";
@@ -37,7 +36,7 @@ const ConnectButton = ({
 }: ButtonProps): JSX.Element => {
   const [loadingNano, setLoadingNano] = useState<boolean>(false);
 
-  const setup = async (userAddress: string): Promise<void> => {
+  const setup = React.useCallback(async (userAddress: string): Promise<void> => {
     setUserAddress(userAddress);
     // updates balance
     const balance = await Tezos.tz.getBalance(userAddress);
@@ -47,7 +46,7 @@ const ConnectButton = ({
     const storage: any = await contract.storage();
     setContract(contract);
     setStorage(storage.toNumber());
-  };
+  }, [Tezos, contractAddress, setContract, setStorage, setUserAddress, setUserBalance]);
 
   const connectWallet = async (): Promise<void> => {
     try {
@@ -110,7 +109,7 @@ const ConnectButton = ({
         setBeaconConnection(true);
       }
     })();
-  }, []);
+  }, [Tezos, setBeaconConnection, setPublicToken, setWallet, setup]);
 
   return (
     <div className="buttons">

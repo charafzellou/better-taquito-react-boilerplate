@@ -12,6 +12,8 @@ module.exports = {
         buffer: require.resolve("buffer"),
         asset: require.resolve("assert"),
         crypto: require.resolve("crypto-browserify"),
+        fs: false,
+        vm: require.resolve("vm-browserify"),
       };
 
       webpackConfig.plugins.push(
