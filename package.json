@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@airgap/beacon-sdk": "4.6.4",
+    "@airgap/beacon-sdk": "4.8.1",
     "@craco/craco": "7.1.0",
-    "@ledgerhq/hw-transport-webusb": "6.29.13",
+    "@ledgerhq/hw-transport-webusb": "6.30.0",
     "@taquito/beacon-wallet": "21.0.5",
     "@taquito/ledger-signer": "21.0.5",
     "@taquito/taquito": "21.0.5",
@@ -28,15 +28,16 @@
     "react-scripts": "5.0.1",
     "stream-browserify": "3.0.0",
     "typescript": "4.9.5",
-    "util": "0.12.5"
+    "util": "0.12.5",
+    "vm-browserify": "^1.1.2"
   },
   "scripts": {
-    "build": "craco build",
-    "test": "craco test",
     "start": "craco start",
+    "test": "craco test",
+    "build": "craco build",
     "eject": "react-scripts eject",
-    "clean": "rm -rf package-lock.json node_modules build",
-    "update-taquito": "ncu -u --target newest --filter '/@taquito.*$/' && npm i"
+    "clean": "rm -rf node_modules build",
+    "update-taquito": "ncu -t minor @taquito* -u && npm i"
   },
   "eslintConfig": {
     "extends": "react-app"

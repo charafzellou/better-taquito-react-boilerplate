@@ -26,7 +26,7 @@ const DisconnectButton = ({
     setUserAddress("");
     setUserBalance(0);
     setWallet(null);
-    const tezosTK = new TezosToolkit("https://rpc.tzkt.io/ghostnet");
+    const tezosTK = new TezosToolkit("https://rpc.tzkt.io/shadownet");
     setTezos(tezosTK);
     setBeaconConnection(false);
     setPublicToken(null);

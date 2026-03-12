@@ -7,17 +7,9 @@ import DisconnectButton from "./components/DisconnectWallet";
 import UpdateContract from "./components/UpdateContract";
 import Transfers from "./components/Transfers";
 
-enum BeaconConnection {
-  NONE = "",
-  LISTENING = "Listening to P2P channel",
-  CONNECTED = "Channel connected",
-  PERMISSION_REQUEST_SENT = "Permission request sent, waiting for response",
-  PERMISSION_REQUEST_SUCCESS = "Wallet is connected"
-}
-
 const App = () => {
   const [Tezos, setTezos] = useState<TezosToolkit>(
-    new TezosToolkit("https://rpc.tzkt.io/ghostnet")
+    new TezosToolkit("https://rpc.tzkt.io/shadownet")
   );
   const [contract, setContract] = useState<any>(undefined);
   const [publicToken, setPublicToken] = useState<string | null>("");
@@ -29,7 +21,7 @@ const App = () => {
   const [beaconConnection, setBeaconConnection] = useState<boolean>(false);
   const [activeTab, setActiveTab] = useState<string>("transfer");
 
-  // Ghostnet Increment/Decrement contract
+  // Shadownet Increment/Decrement contract
   const contractAddress: string = "KT1WiPWNcBMcXJButkkvroRGkzs45n3iZ13c";
 
   const generateQrCode = (): { __html: string } => {
@@ -137,7 +129,7 @@ const App = () => {
             <p>
               <i className="far fa-file-code"></i>&nbsp;
               <a
-                href={`https://better-call.dev/ghostnet/${contractAddress}/operations`}
+                href={`https://better-call.dev/shadownet/${contractAddress}/operations`}
                 target="_blank"
                 rel="noopener noreferrer"
               >

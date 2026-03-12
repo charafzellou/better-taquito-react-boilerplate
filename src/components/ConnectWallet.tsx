@@ -36,7 +36,7 @@ const ConnectButton = ({
 }: ButtonProps): JSX.Element => {
   const [loadingNano, setLoadingNano] = useState<boolean>(false);
 
-  const setup = async (userAddress: string): Promise<void> => {
+  const setup = React.useCallback(async (userAddress: string): Promise<void> => {
     setUserAddress(userAddress);
     // updates balance
     const balance = await Tezos.tz.getBalance(userAddress);
@@ -46,15 +46,15 @@ const ConnectButton = ({
     const storage: any = await contract.storage();
     setContract(contract);
     setStorage(storage.toNumber());
-  };
+  }, [Tezos, contractAddress, setContract, setStorage, setUserAddress, setUserBalance]);
 
   const connectWallet = async (): Promise<void> => {
     try {
       await wallet.requestPermissions({
         network: {
-          type: NetworkType.GHOSTNET,
-          rpcUrl: "https://rpc.tzkt.io/ghostnet"
-        }
+          type: NetworkType.SHADOWNET,
+          rpcUrl: "https://rpc.tzkt.io/shadownet"
+        } as any
       });
       // gets user's address
       const userAddress = await wallet.getPKH();
@@ -87,7 +87,7 @@ const ConnectButton = ({
       // creates a wallet instance
       const wallet = new BeaconWallet({
         name: "Taquito Boilerplate",
-        preferredNetwork: NetworkType.GHOSTNET,
+        preferredNetwork: NetworkType.SHADOWNET as any,
         disableDefaultEvents: true, // Disable all events / UI. This also disables the pairing alert.
         eventHandlers: {
           // To keep the pairing alert, we have to add the following default event handlers back
@@ -109,7 +109,7 @@ const ConnectButton = ({
         setBeaconConnection(true);
       }
     })();
-  }, []);
+  }, [Tezos, setBeaconConnection, setPublicToken, setWallet, setup]);
 
   return (
     <div className="buttons">
