@@ -55,6 +55,11 @@ export function register(config) {
 }
 
 function registerValidSW(swUrl, config) {
+  const swParsedUrl = new URL(swUrl, window.location.href);
+  if (swParsedUrl.origin !== window.location.origin) {
+    console.error('Service worker URL is not on the same origin. Registration aborted.');
+    return;
+  }
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
@@ -99,6 +104,11 @@ function registerValidSW(swUrl, config) {
 }
 
 function checkValidServiceWorker(swUrl, config) {
+  const swParsedUrl = new URL(swUrl, window.location.href);
+  if (swParsedUrl.origin !== window.location.origin) {
+    console.error('Service worker URL is not on the same origin. Fetch aborted.');
+    return;
+  }
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
